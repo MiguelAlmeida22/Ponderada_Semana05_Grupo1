@@ -2,6 +2,14 @@
 
 Este projeto implementa dois semáforos inteligentes controlados por um **ESP32**, utilizando um **sensor LDR** para detectar luminosidade ambiente e adaptar automaticamente o comportamento dos sinais, incluindo um **modo noturno** e detecção de veículos.  
 
+<div align="center">
+<sub>Figura 1 - Circuito Completo </sub>
+<br>
+<img src="./assets/geral.jpeg" alt='Montagem' width="70%">
+<br>
+<sup>Fonte: Material produzido pelos autores, 2025.</sup>
+</div>
+
 ## Integrantes
 
 - Miguel Ferreira de Siqueira Almeida
@@ -28,6 +36,13 @@ Este projeto implementa dois semáforos inteligentes controlados por um **ESP32*
 ## Montagem do Circuito
 
 ### Pinos dos Semáforos
+<div align="center">
+<sub>Figura 2 - Ligações LEDs </sub>
+<br>
+<img src="./assets/leds.jpeg" alt='leds' width="70%">
+<br>
+<sup>Fonte: Material produzido pelos autores, 2025.</sup>
+</div>
 
 #### Semáforo 1:
 | LED | GPIO |
@@ -50,8 +65,8 @@ Este projeto implementa dois semáforos inteligentes controlados por um **ESP32*
 Os semáforos funcionam com um ciclo padrão:
 
 Semáforo 1  
-- Verde: 6 segundos  
-- Amarelo: 2 segundos  
+- Verde: 3 segundos  
+- Amarelo: 1.5 segundos  
 - Vermelho: 6 segundos  
 
 Semáforo 2  
@@ -70,6 +85,13 @@ O modo noturno também pode ser ativado manualmente pela interface web.
 
 
 ### Funcionamento do LDR
+<div align="center">
+<sub>Figura 3 - Sensor LDR </sub>
+<br>
+<img src="./assets/LDR.png" alt='interface' width="70%">
+<br>
+<sup>Fonte: Material produzido pelos autores, 2025.</sup>
+</div>
 
 O **LDR** é um sensor resistivo cuja resistência varia de acordo com a quantidade de luz incidente. Em ambientes claros, sua resistência diminui; em ambientes escuros, aumenta. No projeto, ele é utilizado para:
 
@@ -99,17 +121,33 @@ O ESP32 converte a tensão em um valor entre:
 
 Ativação Automática Modo Noturno
 
-```c++
-
-```
-
 
 ### Interface Web
 
 A interface permite:
 
-- Visualizar o valor do LDR  
-- Ativar os modo noturno / modo normal / modo automático 
+- Visualizar o valor do sensor LDR
+- Visualizar a intensidade da luminosidade  
+- Ativar os modo noturno / modo normal / modo automático
+- Visualizar o modo atual
+- Visualizar o funcionamento do semáforo online
+- Visualizar os Endpoints do broker
+
+
+<div align="center">
+<sub>Figura 4 - Interface 1</sub>
+<br>
+<img src="./assets/interface.png" alt='interface' width="100%">
+<br>
+<sup>Fonte: Material produzido pelos autores, 2025.</sup>
+</div>
+<div align="center">
+<sub>Figura 5 - Interface 2</sub>
+<br>
+<img src="./assets/interface1.png" alt='interface' width="100%">
+<br>
+<sup>Fonte: Material produzido pelos autores, 2025.</sup>
+</div>
 
 
 ## Código completo utilizado
